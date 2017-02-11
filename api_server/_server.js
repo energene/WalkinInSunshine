@@ -6,10 +6,8 @@ const trailRouter = require(__dirname + '/routes/trail_routes');
 app.use(bodyParser.json());
 
 const forecastRouter = require(__dirname + '/routes/forecast_routes');
-// const trailForecastCombiner = require(__dirname + '/routes/trail_forecast_combiner');
 
 app.use('/api', forecastRouter);
-// app.use('/api', trailForecastCombiner);
 app.use('/api', trailRouter);
 
 app.use(express.static(__dirname + '/../client/build'));
@@ -21,7 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// the following is for the testing server
+// the following is for testing the server
 module.exports = exports = {
   server: {
     close: function() {
