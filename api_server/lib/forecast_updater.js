@@ -1,9 +1,11 @@
+//TODO: check for loading of https, util, events
+
 const https = require('https');
 const inherits = require('util').inherits;
 const EventEmitter = require('events').EventEmitter;
 
 var API_KEY = '870e1d8314cbf00f2309e23133394e5f';
-console.log('forecast_updater.js');
+console.log('forecast_updater.js running');
 module.exports = exports = WeatherEmitter;
 function WeatherEmitter() {
   if (!(this instanceof WeatherEmitter)) return new WeatherEmitter();

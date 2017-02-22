@@ -36,7 +36,8 @@ trailsRouter.get('/trailWeather/:id', (req, res) => {
 trailsRouter.get('/trails', (req, res) => {
   Trail.find(null, (err, data) => {
     if (err) return errorHandler(err, res);
-    // TODO replace '5' with data.length before deployment
+    // TODO replace '5' with data.length before deployment because currently
+    //      the lag is too great if the whole dataset it pulled in
     for (var i = 0; i < 5; i++) {
       console.log('data[i][weather] : ', data[i]['weather'].length);
       if (data[i]['weather'].length === 0) {
